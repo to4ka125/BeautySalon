@@ -1,0 +1,138 @@
+﻿<Window x:Class="BeautySalon.Forms.workTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:menuBnt="clr-namespace:BeautySalon.viewBase"
+        xmlns:vm="clr-namespace:BeautySalon.View"
+        xmlns:local="clr-namespace:BeautySalon.Forms"
+        mc:Ignorable="d"
+        Title="Рабочий стол" Loaded="Window_Loaded" Background="Transparent" Height="750" Width="1200" MinHeight="750" MinWidth="1200" WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Image/VKR.jpg"/>
+        </Grid.Background>
+        <Border BorderBrush="#A8B7B0" Background="#A8B7B0"  Grid.Column="0" BorderThickness="0 0 0.5 0">
+            <Grid>
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" VerticalAlignment="Center">
+                    <Image Width="220" Height="220" Source="/Image/logo1.png"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <menuBnt:Btn Style="{StaticResource BtnMenu}" x:Name="Employees" Click="Employees_Click">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="30" Margin="20 0 15 0" Source="/Image/ImageIcon/Employees.png"/>
+                                <TextBlock  FontSize="18" Margin="0 10" Text="Сотрудники"/>
+                            </StackPanel>
+                        </Grid>
+                    </menuBnt:Btn>
+
+                    <menuBnt:Btn Style="{StaticResource BtnMenu}" x:Name="Orders" Click="Employees_Click">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="30" Margin="20 0 15 0" Source="/Image/ImageIcon/Appointments.png"/>
+                                <TextBlock FontSize="18" Margin="0 10" Text="Запись"/>
+                            </StackPanel>
+                        </Grid>
+                    </menuBnt:Btn>
+
+                    <menuBnt:Btn Style="{StaticResource BtnMenu}"  x:Name="Clients" Click="Employees_Click">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="30" Margin="20 0 15 0" Source="/Image/ImageIcon/Clients.png"/>
+                                <TextBlock FontSize="18" Margin="0 10" Text="Клиенты"/>
+                            </StackPanel>
+                        </Grid>
+                    </menuBnt:Btn>
+
+                    <menuBnt:Btn Style="{StaticResource BtnMenu}" x:Name="Services" Click="Employees_Click">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="30" Margin="20 0 15 0" Source="/Image/ImageIcon/Services.png"/>
+                                <TextBlock FontSize="18" Margin="0 10" Text="Услуги"/>
+                            </StackPanel>
+                        </Grid>
+                    </menuBnt:Btn>
+
+                    <menuBnt:Btn Style="{StaticResource BtnMenu}" x:Name="Schedules" Click="Employees_Click">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="30" Margin="20 0 15 0" Source="/Image/ImageIcon/Schedules.png"/>
+                                <TextBlock FontSize="18" Margin="0 10" Text="Расписание"/>
+                            </StackPanel>
+                        </Grid>
+                    </menuBnt:Btn>
+
+                    <menuBnt:Btn Style="{StaticResource BtnMenu}" x:Name="Materials" Click="Employees_Click">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="30" Margin="20 0 15 0" Source="/Image/ImageIcon/Materials.png"/>
+                                <TextBlock FontSize="18" Margin="0 10" Text="Материалы"/>
+                            </StackPanel>
+                        </Grid>
+                    </menuBnt:Btn>
+
+                    <menuBnt:Btn Style="{StaticResource BtnMenu}" x:Name="Products" Click="Employees_Click">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="30" Margin="20 0 15 0" Source="/Image/ImageIcon/Cosmetic_Products.png"/>
+                                <TextBlock FontSize="18" Margin="0 10" Text="Товары"/>
+                            </StackPanel>
+                        </Grid>
+                    </menuBnt:Btn>
+
+
+                    <menuBnt:Btn Style="{StaticResource BtnMenu}" x:Name="Certificates" Click="Employees_Click">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="30" Margin="20 0 15 0" Source="/Image/ImageIcon/Certificat.png"/>
+                                <TextBlock FontSize="18" Margin="0 10" Text="Сертификаты"/>
+                            </StackPanel>
+                        </Grid>
+                    </menuBnt:Btn>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1" Margin="0,0,-0.4,0">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.Row="0" Background="#A8B7B0"  BorderThickness="0 0 0 0.5" BorderBrush="#506F60" >
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <StackPanel Margin="20 0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Label Padding="0 5 0 0" FontSize="11" x:Name="role" Opacity="0.6"/>
+                        <Label Padding="0" x:Name="Name"/>
+                    </StackPanel>
+                    <Rectangle Width="1" Height="50" Fill="#506F60"/>
+
+                    <Ellipse Width="30" Height="30" Margin="20 0" Stroke="#506F60" StrokeThickness="1">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Image/admin.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    <Rectangle Width="1" Height="50" Fill="#506F60"/>
+                    <Button Click="Button_Click" Width="25" Height="25" Style="{StaticResource BtnClose}" Margin="20 0"/>
+                </StackPanel>
+                
+            </Border>
+
+            <StackPanel Grid.Row="1" x:Name="StackPanelActive">
+              
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

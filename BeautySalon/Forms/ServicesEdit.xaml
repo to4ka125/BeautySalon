@@ -1,0 +1,29 @@
+﻿<Window x:Class="BeautySalon.Forms.ServicesEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeautySalon.Forms"
+        mc:Ignorable="d"
+        Title="Изменение услуги" Height="400" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="Редактирование услуги" FontSize="15"/>
+            <TextBox MaxLength="20" x:Name="Name" Margin="0 10 0 0" Height="50" Width="380" Style="{StaticResource PcaholderTextBoxStyle}" Tag="Название услуги" PreviewTextInput="Name_PreviewTextInput"/>
+            <TextBox MaxLength="40" x:Name="Description" Margin="0 10 0 0" Width="380" TextWrapping="Wrap" Height="100" Style="{StaticResource PcaholderTextBoxStyle}" Tag="Описание" PreviewTextInput="Description_PreviewTextInput"/>
+            <TextBox MaxLength="11" x:Name="Price" Margin="0 10 0 0" Width="380" Height="50" Style="{StaticResource PcaholderTextBoxStyle}" Tag="Цена" PreviewTextInput="Price_PreviewTextInput"/>
+            <TextBox MaxLength="40" x:Name="Duration" Margin="0 10 0 0" Width="380" Height="50" Style="{StaticResource PcaholderTextBoxStyle}" Tag="Продолжительность" PreviewTextInput="Duration_PreviewTextInput"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Width="150" Margin="0 0 50 0" Height="45" Content="Назад" Style="{StaticResource BtnStyle}" Click="Button_Click_1"/>
+            <Button Width="150" Height="45" Content="Изменить" Style="{StaticResource BtnStyle}" Click="Button_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

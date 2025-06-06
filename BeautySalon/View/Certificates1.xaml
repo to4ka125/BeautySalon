@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="BeautySalon.View.Certificates1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BeautySalon.View"
+             mc:Ignorable="d" 
+            d:DesignHeight="700" d:DesignWidth="940" Background="Transparent" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid x:Name="one">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="570"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Сертификат" FontSize="24" Margin="10"/>
+            </StackPanel>
+            <Grid Grid.Row="1" Margin="10 20" x:Name="container">
+                
+            </Grid>
+
+            <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Orientation="Horizontal">
+                <Grid Margin="10 0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="880"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                      
+                        <Button Name="Print" Click="Button_Click" Style="{StaticResource BtnStyle}" Margin="0 0 20 0" Width="200" Height="50" Content="Распечатать" 
+                                Visibility="Hidden"/>
+                    </StackPanel>
+
+
+
+
+
+                </Grid>
+            </StackPanel>
+
+
+        </Grid>
+        <Grid x:Name="second" Visibility="Hidden">
+
+        </Grid>
+    </Grid>
+</UserControl>

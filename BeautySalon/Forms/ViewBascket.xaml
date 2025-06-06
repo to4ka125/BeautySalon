@@ -1,0 +1,27 @@
+﻿<Window x:Class="BeautySalon.Forms.ViewBascket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeautySalon.Forms"
+        mc:Ignorable="d"
+        Title="ViewBascket" Height="400" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="Просмотр корзины" FontSize="15"/>
+
+            <DataGrid Style="{StaticResource SafeDataGridStyle}" x:Name="dataGrid" Margin="0 5" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Width="150" Margin="0 0 50 0" Height="45" Content="Назад" Style="{StaticResource BtnStyle}" Click="Button_Click_1"/>
+            <Button Width="150" Height="45" Content="Распечатать чек" Style="{StaticResource BtnStyle}" Click="Button_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

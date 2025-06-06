@@ -1,0 +1,54 @@
+﻿<Window x:Class="BeautySalon.Forms.testForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeautySalon.Forms"
+        mc:Ignorable="d"
+        Title="testForm" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Выбор мастера -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Мастер:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <ComboBox x:Name="MasterComboBox" Width="200" SelectedIndex="0">
+                <ComboBoxItem Content="Мастер 1" Tag="1"/>
+                <ComboBoxItem Content="Мастер 2" Tag="2"/>
+                <ComboBoxItem Content="Мастер 3" Tag="3"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Календарь -->
+        <Calendar x:Name="customCalendar" PreviewMouseUp="customCalendar_PreviewMouseUp" PreviewMouseDoubleClick="customCalendar_PreviewMouseDoubleClick">
+            <Calendar.Resources>
+                <local:BackgroundConverter x:Key="Converter"/>
+            </Calendar.Resources>
+            <Calendar.CalendarDayButtonStyle>
+                <Style TargetType="CalendarDayButton">
+                    <Style.Triggers>
+                        <DataTrigger Value="True">
+                            <DataTrigger.Binding>
+                                <MultiBinding Converter="{StaticResource Converter}">
+                                    <Binding Path="." />
+                                    <Binding Path="Dates" 
+                                     RelativeSource="{RelativeSource AncestorType=Window}" />
+                                </MultiBinding>
+                            </DataTrigger.Binding>
+                            <Setter Property="Background" Value="Red" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Calendar.CalendarDayButtonStyle>
+        </Calendar>
+        
+        <!-- Кнопка сохранения -->
+        <Button Grid.Row="3" Content="Сохранить" Width="100" HorizontalAlignment="Right" 
+                Click="Button_Click" Margin="0,10,0,0"/>
+    </Grid>
+</Window>
